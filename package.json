@@ -12,8 +12,8 @@
     "build:dev": "webpack --mode development",
     "build:dev:vis": "webpack --mode development --env.visualize",
 
-    "start:dev": "webpack-dev-server",
-    "start:dev:vis": "webpack-dev-server --env.visualize",
+    "start:dev": "webpack-dev-server --mode development",
+    "start:dev:vis": "webpack-dev-server --env.visualize --mode development",
 
     "start": "npm run build"
   },
