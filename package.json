@@ -8,14 +8,13 @@
     "build:local": "webpack --env.local",
     "build:vis": "webpack --env.visualize",
     "build:local:vis": "webpack --env.local --env.visualize",
-
     "build:dev": "webpack --mode development",
     "build:dev:vis": "webpack --mode development --env.visualize",
-
     "start:dev": "webpack-dev-server --mode development",
     "start:dev:vis": "webpack-dev-server --env.visualize --mode development",
-
-    "start": "npm run build"
+    "start": "npm run build",
+    "test": "npx jest --watch",
+    "test:ci": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -34,6 +33,7 @@
   },
   "homepage": "https://github.com/cmccormack/minesweeper#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.4",
     "@types/react-dom": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
@@ -50,6 +50,7 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.8",
     "image-webpack-loader": "^6.0.0",
+    "jest": "^24.9.0",
     "lint-staged": "^9.4.1",
     "mini-css-extract-plugin": "^0.8.0",
     "nodemon": "^1.19.3",
@@ -57,6 +58,7 @@
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.0",
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",
@@ -68,6 +70,9 @@
     "hooks": {
       "pre-commit": "lint-staged --quiet"
     }
+  },
+  "jest": {
+    "testMatch": ["src/**/*.test.js"]
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
