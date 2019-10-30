@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FunctionComponent, useReducer } from "react";
+import { FC, useReducer } from "react";
 import { GameAction } from "../logic/actions";
 import { rootReducer, initialState, GameState } from "../logic/reducer";
 
@@ -18,7 +18,7 @@ const initialContextState: ContextState = {
 
 export const GameContext = React.createContext(initialContextState);
 
-export const GameStateProvider: FunctionComponent<{}> = props => {
+export const GameStateProvider: FC<{}> = props => {
   // Did someone whisper redux?
   const [state, dispatch] = useReducer(rootReducer, initialState);
 
