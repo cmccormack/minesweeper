@@ -1,20 +1,10 @@
-import { GameState, GameStatus, GameActionType, GameAction } from "./types";
+export interface GameAction<PayloadType> {
+  type: GameActionType;
+  payload?: PayloadType;
+}
 
-export const initialState: GameState = {
-  status: GameStatus.Initial,
-  board: [],
-};
-
-export function rootReducer<T>(
-  state = initialState,
-  action: GameAction<T>
-): GameState {
-  switch (action.type) {
-    case GameActionType.StartGame:
-      return { ...state, status: GameStatus.Running };
-    default:
-      return state;
-  }
+export enum GameActionType {
+  StartGame,
 }
 
 export function startGame(): GameAction<void> {

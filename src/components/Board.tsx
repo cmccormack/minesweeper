@@ -9,7 +9,7 @@ const Board = (): React.ReactElement => {
   return (
     <>
       <div>{JSON.stringify(state)}</div>
-      <button onClick={(): void => dispatch(startGame())}>Start</button>
+      <button onClick={() => dispatch(startGame())}>Start</button>
     </>
   );
 };

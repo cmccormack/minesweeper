@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FunctionComponent, useReducer } from "react";
-import { GameAction, GameState } from "../logic/types";
-import { rootReducer, initialState } from "../logic/actions";
+import { GameAction } from "../logic/actions";
+import { rootReducer, initialState, GameState } from "../logic/reducer";
 
 interface ContextState {
   state: GameState;
