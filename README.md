@@ -13,3 +13,6 @@ Simple Minesweeper Game in JS
 * You don't have to mark all the bombs to win; you just need to open all non-bomb squares.
 * Right-clicking twice will give you a question mark symbol which can be useful if you are unsure about a square
 
+## Current Build
+
+https://infallible-liskov-6d1d72.netlify.com/
