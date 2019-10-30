@@ -1,4 +1,6 @@
 import * as React from "react";
+import { GameStateProvider } from "../context/GameContext";
+import Board from "./Board";
 
 export interface AppProps {
   compiler: string;
@@ -6,7 +8,8 @@ export interface AppProps {
 }
 
 export const App = (props: AppProps): JSX.Element => (
-  <h1>
+  <GameStateProvider>
     Minesweeper created with {props.compiler} and {props.framework}!
-  </h1>
+    <Board />
+  </GameStateProvider>
 );
