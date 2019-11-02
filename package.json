@@ -10,7 +10,6 @@
     "build:local:vis": "webpack --env.local --env.visualize",
     "build:dev": "webpack --mode development",
     "build:dev:vis": "webpack --mode development --env.visualize",
-
     "start:dev": "npm run build:dev && webpack-dev-server --mode development",
     "start:dev:vis": "npm run build:dev && webpack-dev-server --env.visualize --mode development",
     "start": "npm run build",
@@ -73,7 +72,9 @@
     }
   },
   "jest": {
-    "testMatch": ["src/**/*.test.js"]
+    "testMatch": [
+      "src/**/*.test.js"
+    ]
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
@@ -86,6 +87,7 @@
     ]
   },
   "dependencies": {
+    "@types/webpack-env": "^1.14.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   }

@@ -29,7 +29,14 @@ module.exports = (env, { mode = "production" }) => {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: "ts-loader",
+          use: [
+            {
+              loader: "ts-loader",
+              options: {
+                transpileOnly: true,
+              },
+            },
+          ],
         },
         {
           enforce: "pre",
@@ -66,8 +73,10 @@ module.exports = (env, { mode = "production" }) => {
     },
     devtool: "source-map",
     devServer: {
+      publicPath: "/",
       contentBase: path.join(__dirname, "dist"),
       compress: true,
+      hot: true,
       open: true,
       port: 8000,
       quiet: true,
