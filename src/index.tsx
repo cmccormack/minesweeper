@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 
 function render() {
   const App = require("./components/App").App;
+
   ReactDOM.render(
     <App compiler="TypeScript" framework="React" />,
     document.getElementById("root")
