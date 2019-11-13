@@ -1,9 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { App } from "./components/App";
+function render() {
+  const App = require("./components/App").App;
+  ReactDOM.render(
+    <App compiler="TypeScript" framework="React" />,
+    document.getElementById("root")
+  );
+}
 
-ReactDOM.render(
-  <App compiler="TypeScript" framework="React" />,
-  document.getElementById("root")
-);
+render();
+
+if (module.hot) {
+  module.hot.accept("./components/App", render);
+}
